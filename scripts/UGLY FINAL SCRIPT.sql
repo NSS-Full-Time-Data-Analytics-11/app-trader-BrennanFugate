@@ -20,7 +20,7 @@ ROUND((((ROUND((FLOOR(AVG(a.rating + p.rating)/2/.25)*.25),2) *24)+12)*5000),2) 
 -- How much did the app cost to maintain
 ROUND((((ROUND((FLOOR(AVG(a.rating + p.rating)/2/.25)*.25),2) *24)+12)*1000),2) :: money AS app_maintenance,
 -- Profit from the apps after considering maintenance and initial price
-(ROUND((((ROUND((FLOOR(AVG(a.rating + p.rating)/2/.25)*.25),2) *24)+12)*5000),2)-ROUND((((ROUND((FLOOR(AVG(a.rating + p.rating)/2/.25)*.25),2) *24)+12)*1000)+25000,2)) :: money AS profit 
+(ROUND((((ROUND((FLOOR(AVG(a.rating + p.rating)/2/.25)*.25),2) *24)+12)*5000),2)-ROUND((((ROUND((FLOOR(AVG(a.rating + p.rating)/2/.25)*.25),2) *24))*1000)+25000,2)) :: money AS profit 
 FROM app_store_apps AS a 
 INNER JOIN play_store_apps AS p
 ON a.name = p.name
